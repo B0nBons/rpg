@@ -1,0 +1,4 @@
+# ALRIGHT WE MAKING A BATTLE SYSTEM W THIS ONE
+
+def easy_fight(char, consumables, equipped):
+    # lowkey we need to make enemies first lmaooooo
