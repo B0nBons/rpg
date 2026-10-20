@@ -40,7 +40,7 @@ FOREST = {
         "selapisa" : ["Moss paarasites are especially rare now...", "I'm sure a collector would pay a fortune for you!", "More moss than toad. A sad way to live."]
     },
     "Mold-Soaked Crocodile" : {
-        "triton" : ["Finally, a real challenge.", "I'll free you from your chains.", "I'll remove the rot, so deep in your soul."],
+        "triton" : ["Finally, a real challenge.", "Perlos would want this..", "I'll remove the rot, so deep in your soul."],
         "perlos" : ["Huh... So this is where you went, Croco.", "It'll be for the best..", "Everything will be better. I promise."],
         "marchienne" : ["...", "Perlos did say that crocodile that sat with her left one day, and never came back.", "You will be a crocodeadle when I'm done with you."],
         "duffaye" : ["Oh come on.. I don't wanna tell Perlos...", "It's all for the greater good..", "I won't let you hurt any longer."],
@@ -48,8 +48,8 @@ FOREST = {
     }
 }
 
-triton
-perlos
-marchienne
-duffaye
-selapisa
+#triton
+#perlos
+#marchienne
+#duffaye
+#selapisa
