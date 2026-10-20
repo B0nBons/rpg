@@ -9,6 +9,7 @@ intro_play_ONCE =  "placehold"
 # weekly theme is outdoors so maybe start with the more adventure-y parts
 
 def main():
+    global char
     typewriter("Well, aren't you a sight for sore eyes!\nIt's been such a long time since I've seen you!\n...\nI still remember when you fell off a tree when you were young!\nWell then, youngster! What do you call yourself now?\n")
 
     char_choice = protag_talk("...What is my name again?")
@@ -59,6 +60,7 @@ def main():
         typewriter("Granny Duffaye: We can discuss this later. I was told by Mirexio that you need to go see her. She told me it was urgent.")
         protag_talk(f"{char}: Mirexio? Wasn't she that witch who got kicked out? Hehehe, I bet she could make me an infinite money potion! I'll get going, thanks granny!")
         typewriter("Granny Duffaye: (She was the one who was tormenting Geomoros?! He told me his tormenter had been eaten by wolves!)")
+
 
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")

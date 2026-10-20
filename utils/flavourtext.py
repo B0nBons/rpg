@@ -8,7 +8,7 @@ AREAS_SERIOUS = {"Their Home", "Forest", "Abandoned Home", "Caves", "Wastes", "W
 # maybe based on options, they get locked into a normal, fun, or serious route, in which case,
 # areas = what the characters' adventure was like
 # areas_fun = what the characters said the adventure was like
-# areas_serious = what really happened (to be unlocked in the last POV, not pushing bc spoilers)
+# areas_serious = what really happened (to be unlocked in the last POV, not pushing bc spoilers)ok i pushed it oops
 
 FOREST = {
     "Apologetic Toadstool" : {
