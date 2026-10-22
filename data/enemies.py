@@ -21,7 +21,7 @@ def grab_easy_forest(boss=False):
         return copy.deepcopy(HARD_BOSS_FOREST)
     
     num_enemies = random.randint(1,5)
-    print(copy.deepcopy(random.choices(EASY_CHUDS_FOREST, k=num_enemies)))
+    return (copy.deepcopy(random.choices(EASY_CHUDS_FOREST, k=num_enemies)))
 # we need deepcopy bc otherwise hp changes will affect the main/bestiary hp (no clue if im using bestiary right)
 
 grab_easy_forest()

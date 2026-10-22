@@ -1,10 +1,37 @@
 from utils.text_vfx import typewriter as npc, protag_talk as mc
-
+# to test story files run cd /workspaces/rpg && python3 -m story.act1.act1_triton
+# maybe make an action writer for more pop
 def triton_act1():
     print("\n\n\n\n\n")
-    npc("Some time later...")
+    npc("--Some time later--")
     mc("Triton: (This forest always was a nice place.)")
     mc("Triton: (...I'm still amazed that Miss Duffaye remembered when I fell off that tree, all those years ago.)")
     mc("Triton: (Enough about the past. It'd be rude to keep Mirexio waiting.)")
     mc("Triton: What in the world-?!")
-    commmence battle here
+    # yo there would be a battle here, but i havent figured out how to stop doing circle imports so its just not gonna happen for now loll
+    mc("Triton: What a waste of time..")
+    mc("Triton: (Now I really have to run. Can't be late.)")
+    npc("--The soft rustling of trees overpowers the forest. There are no animals. Until--")
+    npc("???: Triton? What are you doing out here..? You know it's not safe.")
+    mc("Triton: (Who in the worlds?!-)")
+    mc("Triton: Oh. Miss Marchienne. It's.. a surprise. Seeing you here.")
+    npc("Marchienne: It really isn't. You are fully aware that I am a hunter.")
+    mc("Triton: (Dammit... I need an excuse. But Marchienne always knows when I'm lying!)")
+    npc("Marchienne: Triton. Are you going to see Mirexio?")
+    mc("Triton: Nope! No. Not at all. Why?")
+    npc("--Triton's poor lie is fully noticed--")
+    npc("Marchienne: I overheard you and Miss Duffaye. There is no need to lie. I'm also on my way to go see her.")
+    mc("Triton: Uh.. I suppose it would be fine by me. Not that it was ever a prolem. Haha. Heh.. Uh. I'm gonna go walk.")
+    npc("Marchienne: ...")
+    mc("Triton: (Why is Marchienne going to see Mirexio?! Urk. This is so awkward.)")
+    npc("Marchienne: Triton. Move.")
+    mc("Triton: I am?")
+    npc("Before Triton even realised, he was on the forest floor, covered in mud.")
+    mc("Triton: ...Marchienne?!")
+    npc("Triton stands up, and flicks the mud off his face.")
+    mc("Triton: Marchienne!! Why in the worlds did you..")
+    npc("Triton notices a smushed Angry Toadstool.")
+    mc("Triton: Oh. Uh. Thanks Marchienne. I didn't notice it at all-")
+    npc("Marchienne: I know you didn't. Come on, it's nearing dusk.")
+
+triton_act1()
