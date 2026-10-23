@@ -16,12 +16,10 @@ HARD_BOSS_FOREST = [
     {"name": "Mold-Soaked Crocodile", "vi" : 30, "ap" : 3, "dp" : 2, "magic_res" : 1, "xp" : 16} #rouund up to even, prolly change xp later
 ]
 
-def grab_easy_forest(boss=False):
+def grab_forest(boss=False):
     if boss:
         return copy.deepcopy(HARD_BOSS_FOREST)
     
     num_enemies = random.randint(1,5)
     return (copy.deepcopy(random.choices(EASY_CHUDS_FOREST, k=num_enemies)))
 # we need deepcopy bc otherwise hp changes will affect the main/bestiary hp (no clue if im using bestiary right)
-
-grab_easy_forest()

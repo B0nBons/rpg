@@ -1,3 +1,6 @@
+# hey guys i wrote the battle system and ngl i think i made everybodys stats too good 
+# so consider this october 22/2026 as the first ever NERF to everybody!
+
 triton = {
     "name" : "Larperino Triton",
     "age" : 26,
@@ -50,19 +53,19 @@ duffaye = {
     "name" : "Geomoros Duffaye",
     "age" : 22, # an old soul ahh
     "job" : "Farmer",
-    "ap" : 4,
-    "dp" : 2,
+    "ap" : 5,
+    "dp" : 4,
     "spe" : 8,
-    "vi" : 20,
-    "potions" : 5,
-    "magic" : 5,
+    "vi" : 30,
+    "potions" : 2,
+    "magic" : 8,
     "magic_res" : 2, #since he has a fairly high aptitude for magic, hes worse at blocking it out
     "magic_style" : "ANIMAL",
     "style" : "Despite being one of the youngest farmers in the village, he can take more than anyone else. He has a love for ANIMALS, and encouraged the entire village to turn pescatarian. What a guy...",
     "passive" : "When hit in battle, gain +1MAGIC. Every five turns, remove all MAGIC, and have one random animal join the battle (MAX 2 TOTAL)."
     }
 
-selapisa = {
+serlapisa = {
     "name" : "Eleosa Serlapisa",
     "age" : 25,
     "job" : "Merchant",

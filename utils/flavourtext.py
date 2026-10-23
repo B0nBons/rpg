@@ -21,7 +21,7 @@ FOREST = {
     "Aggrivated Wisp" : {
         "triton" : ["Ghosts aren't real..", "It's glowing... Like a light to guide the way.", "A life well lived, but now, it is time to rest.."],
         "perlos" : ["Waahhh?! A ghost?!", "This isn't the souls of all those fish coming to haunt me... R-right?", "It's so toasty... Maybe I can cook some fish on it!"],
-        "marchienna" : ["...", "I have no reason to fight with the dead.", "This is quite wisp-y business. Not. Get out of my way."],
+        "marchienne" : ["...", "I have no reason to fight with the dead.", "This is quite wisp-y business. Not. Get out of my way."],
         "duffaye" : ["I uh, don't usually see wisps...", "I've been nothing but peaceful, and yet you want to fight me?!", "Why couldn't I be finding anything else... Like a tree?!"],
         "selapisa" : ["A wisp?! Care to lead me to great treasures?", "Even the dead are stingy...", "Just come with me! Heheh, you'll be worth a fortune.."]
     }, 
@@ -35,7 +35,7 @@ FOREST = {
     "Mossy Toad" : {
         "triton" : ["(This thing is more moss than toad...)", "Just move.", "It looks like a corpse being controlled by a parasite..."],
         "perlos" : ["Why have plants and animals, when you can just combine them!", "Awww, c'mere Mossball!", "I'll hit you all the way to the stars!"],
-        "Marchienne" : ["...", "Disgusting. A parasitic abomination of nature.", "You aren't growing on me."],
+        "marchienne" : ["...", "Disgusting. A parasitic abomination of nature.", "You aren't growing on me."],
         "duffaye" : ["No animal deserves this...", "At least it lived a nice life.", "I'll bury you after this.. You never deserved this, froggy.."],
         "selapisa" : ["Moss paarasites are especially rare now...", "I'm sure a collector would pay a fortune for you!", "More moss than toad. A sad way to live."]
     },
