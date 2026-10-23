@@ -126,7 +126,9 @@ def forest_fight(char = marchienne, boss=False):
                         time.sleep(0.2)
                         continue # yooo rare continue reference guys
 
-                enemy_damage = enemy['ap'] - player['temp_dp']
+                enemy_damage = max(1, enemy['ap'] - player['temp_dp']) # yeah so were doing a MIN damage of one bc some enemies have such bad attack that they literally deal ZERO damage. maybe this is why most games use percentages and whatever
+                # eitherway the damage calc system already needs to be revamped since in late game this WILL be a big issue 
+                # apart from that I also want to aff status effects (burn, freeze, poison, shock), maybe moods (sad, tired, etc, to make it clear to the player that this is NOT a game that is meant to be speedrunt) 
                 player['current_vi'] -= enemy_damage
                 mc(f"Owch! {char.capitalize()} got hit by {enemy['name']} for {enemy_damage} damage!")
                 garbage = input("Press ENTER to continue...")
@@ -137,7 +139,7 @@ def forest_fight(char = marchienne, boss=False):
                     mc(f"{char}: I won't let you do that again.")
                     print(f"{char.capitalize()} gained +1 AP")
                     if enemy_damage >= 4:
-                        player['temp_dp'] += 1
+                        player['temp_ap'] += 1
                         mc(f"{char}: I'll make you pay.")
                         print("Marchienne gains an additional 1 AP...")
 
