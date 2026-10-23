@@ -10,6 +10,13 @@ def protag_talk(text):
     print("\n")
     return text
 
+def narrator(text):
+    for letter in text:
+        print(colorama.Style.DIM + colorama.Fore.YELLOW + letter, end='', flush=True)
+        time.sleep(0.03) # fast text bc narr is a bit crazy
+    print("\n")
+    return text
+
 def typewriter(text, speed_s = 0.04):
     for letter in text:
         print(letter, end='', flush=True)

@@ -10,16 +10,18 @@ intro_play_ONCE =  "placehold"
 
 def main():
     global char
-    typewriter("Well, aren't you a sight for sore eyes!\nIt's been such a long time since I've seen you!\n...\nI still remember when you fell off a tree when you were young!\nWell then, youngster! What do you call yourself now?\n")
+    typewriter("Another quiet day. In the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
 
     char_choice = protag_talk("...What is my name again?")
-    time.sleep(2)
-    char_list = ['Triton (he/him/his)', 'Perlos (she/her/hers)', 'Marchienne (they/them/theirs)', 'Duffaye (he/him/his)', 'Serlapisa (she/her/hers)']
+    garbage = input("(Before making options, you will have the chance to review previous dialouge and press ENTER in order to continue to your choice. Think carefully, for each choice may cause you to take an unexpected path)...\nPlease press ENTER.")
+    char_list = ['Triton (he/him/his)', 'Perlos (she/her/hers)', 'Marchienne (they/them/theirs (NOTE: They do use "miss" as of now, I hope thats not a major issue for now))', 'Duffaye (he/him/his)', 'Serlapisa (she/her/hers)']
     char = pick(char_list, char_choice)
+
+    typewriter("Just then, an overly-excited voice pulls you from your thoughts.\n???: Hey, you there! What's your name? Tell me the right name, and I'll give you your mail!")
 
     if char[1] == 0:
         char = "Triton"
-        protag_talk(f"{char}: My name? It's {char}. I uh. I haven't changed it at all..")
+        protag_talk(f"{char}: My name? It's {char}. Did you need something... Miss Duffaye..?")
         typewriter(f"Granny Duffaye: Oh relax {char}! Remember when you used to call yourself ""Mister Rock Eater-""")
         protag_talk(f"{char}: Okay, okay, what did you need? I'll do it, just don't bring that up again..")
         typewriter("Granny Duffaye: As straight to the point as ever! I was told you need to go see Mirexio. I'm not sure of what the old hag wants from you, but she insisted it was urgent..")
@@ -68,6 +70,11 @@ def main():
     typewriter("""
 ▀█▀ █░█ █▀▀   █░░ █ ▄▀█ █▀█   █░█░█ ▄▀█ █▀   █▀▄▀█ █▀▀
 ░█░ █▀█ ██▄   █▄▄ █ █▀█ █▀▄   ▀▄▀▄▀ █▀█ ▄█   █░▀░█ ██▄""", 0.08)
+
+    typewriter("A (SOON TO BE) VISUAL NOVEL")
+    print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
+
+    # FROM HERE ON, ONLY CALL ACTS BASED ON THE CHAR CHOICE
 
 if __name__ == "__main__":
     main()

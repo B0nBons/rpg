@@ -78,5 +78,5 @@ serlapisa = {
     "magic_res" : 2, # itd be funny if she was like third wall breaking or som
     "magic_style" : "WIND",
     "style" : "She never seems to have customers, yet always has gold. People who go to her for help and advice... Never quite come back the same.",
-    "passive" : "For every enemy in battle, gain +2AP and +2DP. Every turn, roll a dice and give allies a random buff, scaling off MAGIC."
+    "passive" : "For every enemy in battle, gain +2AP and +2DP. Every turn, roll a dice and give allies a random buff, scaling off MAGIC." # THIS WILL BE VERY LIKELY TO BE CHANGED!!!!!!!
     }
