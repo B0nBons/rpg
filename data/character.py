@@ -22,7 +22,7 @@ perlos = {
     "age" : 23,
     "job" : "Fisherman",
     "ap" : 6,
-    "dp" : 7, #not 67 funny
+    "dp" : 4, #not 67 funny
     "spe" : 12,
     "vi" : 20,
     "potions" : 3,
