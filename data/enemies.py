@@ -6,10 +6,10 @@ import random
 import copy
 
 EASY_CHUDS_FOREST = [
-    {"name" : "Apologetic Toadstool" , "vi" : 8, "ap" : 2, "dp" : 0, "magic_res" : 1, "xp" : 4},
-    {"name" : "Aggrivated Wisp", "vi" : 12, "ap" : 4, "dp" : 2, "magic_res" : 2, "xp" : 6 },
-    {"name" : "Not-Stationary Tree", "vi" : 12, "ap" : 2, "dp" : 1, "magic_res" : 0, "xp" : 6 } ,
-    {"name" : "Mossy Toad", "vi" : 8, "ap" : 1, "dp" : 0, "magic_res" : 0, "xp" : 4}
+    {"name" : "Apologetic Toadstool" , "vi" : 12, "ap" : 2, "dp" : 0, "magic_res" : 1, "xp" : 4},
+    {"name" : "Aggrivated Wisp", "vi" : 16, "ap" : 4, "dp" : 2, "magic_res" : 2, "xp" : 6 },
+    {"name" : "Not-Stationary Tree", "vi" : 20, "ap" : 4, "dp" : 1, "magic_res" : 0, "xp" : 6 } ,
+    {"name" : "Mossy Toad", "vi" : 8, "ap" : 5, "dp" : 0, "magic_res" : 0, "xp" : 4}
 ]
 
 HARD_BOSS_FOREST = [

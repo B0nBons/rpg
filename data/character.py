@@ -6,7 +6,7 @@ triton = {
     "age" : 26,
     "job" : "Blacksmith",   # make jobs into classes?
     "ap" : 8, # attack power
-    "dp" : 11, # defense points (FLAT WITH NO PAASSIVE)
+    "dp" : 5, # defense points (FLAT WITH NO PAASSIVE)
     "spe" : 6, # speed (for turn order)
     "vi" : 30, # vitality
     "potions" : 3, # num of potions that can be carried

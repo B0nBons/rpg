@@ -60,6 +60,7 @@ def forest_fight(char = marchienne, boss=False):
         trash = input("Press ENTER when ready to make a choice...")
         choices = ["ATTACK", "CAST SPELL", "USE POTION", "FLEE"]
         title = f"What will {char} do?"
+        print("DEV NOTE: I HAVE NOT IN FACT DONE POTIONS YET!!!")
         choice, trash = pick(choices, title)
 
         if choice == "ATTACK" : 
@@ -94,19 +95,19 @@ def forest_fight(char = marchienne, boss=False):
                             mc(f"Perlos fishes up another for her collection! {victim['name']} was defeated!")
                             enemies.remove(victim)
 
-            elif choice == "CAST SPELL":
-                mc("!!! A magical power seems to be awakening....")
-                print("my bad gang i havent done this yet, also nobody gets magic until chapter 2 or 3, so hold your horses")
-                mc("You get the feeling that being patient will make your life a lot better. You decide to let the ENEMIES attack first.")
+        elif choice == "CAST SPELL":
+             mc("!!! A magical power seems to be awakening....")
+             print("my bad gang i havent done this yet, also nobody gets magic until chapter 2 or 3, so hold your horses")
+             mc("You get the feeling that being patient will make your life a lot better. You decide to let the ENEMIES attack first.")
 
-            elif choice == "FLEE":
-                if boss == True:
-                    mc(f"{char} : I'm not going to run away.")
-                elif boss == False:
-                    chance = random.randint(0,100)
-                    if chance <= 25:
-                        print("COWARD OVER HERE!!! You fled the battle. No XP gained.")
-                        return False # loser lol
+        elif choice == "FLEE":
+            if boss == True:
+                mc(f"{char} : I'm not going to run away.")
+            elif boss == False:
+                chance = random.randint(0,100)
+                if chance <= 25:
+                    print("COWARD OVER HERE!!! You fled the battle. No XP gained.")
+                    return False # loser lol
 
             # now we check if enemies died
 
@@ -117,37 +118,37 @@ def forest_fight(char = marchienne, boss=False):
             # yeah thats the win idk man
             # now we have to do enemies (because undertale genocoide sim is not tuff)
 
-            print("ENEMY TURN (COOL TEXT THING ON BOTH SIDES)")
-            for enemy in enemies:
-                if char == "triton":
-                    deflect_chance = random.randint(0,100)
-                    if deflect_chance <= 20: # CHANGE THIS ITS FOR TESTING ok it works i think
-                        mc(f"Triton steadies his blade, and DEFLECTS {enemy['name']}'s attack!")
-                        time.sleep(0.2)
-                        continue # yooo rare continue reference guys
+        print("ENEMY TURN (COOL TEXT THING ON BOTH SIDES)")
+        for enemy in enemies:
+            if char == "triton":
+                deflect_chance = random.randint(0,100)
+                if deflect_chance <= 20: # CHANGE THIS ITS FOR TESTING ok it works i think
+                    mc(f"Triton steadies his blade, and DEFLECTS {enemy['name']}'s attack!")
+                    time.sleep(0.2)
+                    continue # yooo rare continue reference guys
 
-                enemy_damage = max(1, enemy['ap'] - player['temp_dp']) # yeah so were doing a MIN damage of one bc some enemies have such bad attack that they literally deal ZERO damage. maybe this is why most games use percentages and whatever
+            enemy_damage = max(1, enemy['ap'] - player['temp_dp']) # yeah so were doing a MIN damage of one bc some enemies have such bad attack that they literally deal ZERO damage. maybe this is why most games use percentages and whatever
                 # eitherway the damage calc system already needs to be revamped since in late game this WILL be a big issue 
                 # apart from that I also want to aff status effects (burn, freeze, poison, shock), maybe moods (sad, tired, etc, to make it clear to the player that this is NOT a game that is meant to be speedrunt) 
-                player['current_vi'] -= enemy_damage
-                mc(f"Owch! {char.capitalize()} got hit by {enemy['name']} for {enemy_damage} damage!")
-                garbage = input("Press ENTER to continue...")
+            player['current_vi'] -= enemy_damage
+            mc(f"Owch! {char.capitalize()} got hit by {enemy['name']} for {enemy_damage} damage!")
+            garbage = input("Press ENTER to continue...")
 
                 # now we do marchienne passive of free attack
-                if char == "marchienne":
+            if char == "marchienne":
+                player['temp_ap'] += 1
+                mc(f"{char}: I won't let you do that again.")
+                print(f"{char.capitalize()} gained +1 AP")
+                if enemy_damage >= 4:
                     player['temp_ap'] += 1
-                    mc(f"{char}: I won't let you do that again.")
-                    print(f"{char.capitalize()} gained +1 AP")
-                    if enemy_damage >= 4:
-                        player['temp_ap'] += 1
-                        mc(f"{char}: I'll make you pay.")
-                        print("Marchienne gains an additional 1 AP...")
+                    mc(f"{char}: I'll make you pay.")
+                    print("Marchienne gains an additional 1 AP...")
 
-                if player['current_vi'] <= 0:
-                    print("YOU LOST, TRY NOT SUCKING")
-                    return False
+            if player['current_vi'] <= 0:
+                print("YOU LOST, TRY NOT SUCKING")
+                return False
 
 
             # SHIT I FORGOT TO MAKE SPEED RELEVANT. ok i think itll just be irrelevant for now until i maybe make it into an actual visual novel ahh game
 
-forest_fight("marchienne")
+forest_fight("triton")
