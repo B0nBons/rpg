@@ -150,3 +150,4 @@ def forest_fight(char = marchienne, boss=False):
 
 
             # SHIT I FORGOT TO MAKE SPEED RELEVANT. ok i think itll just be irrelevant for now until i maybe make it into an actual visual novel ahh game
+forest_fight("triton")

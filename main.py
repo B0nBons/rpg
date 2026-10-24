@@ -67,9 +67,9 @@ def main():
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
     print(".. -. / - .... . / . -. -.. --..-- / .-- . / .- .-.. .-.. / .-.. .. . -..")
-    typewriter("""
-▀█▀ █░█ █▀▀   █░░ █ ▄▀█ █▀█   █░█░█ ▄▀█ █▀   █▀▄▀█ █▀▀
-░█░ █▀█ ██▄   █▄▄ █ █▀█ █▀▄   ▀▄▀▄▀ █▀█ ▄█   █░▀░█ ██▄""", 0.08)
+    #typewriter("""
+#▀█▀ █░█ █▀▀   █░░ █ ▄▀█ █▀█   █░█░█ ▄▀█ █▀   █▀▄▀█ █▀▀
+#░█░ █▀█ ██▄   █▄▄ █ █▀█ █▀▄   ▀▄▀▄▀ █▀█ ▄█   █░▀░█ ██▄""", 0.08)
 
     typewriter("A (SOON TO BE) VISUAL NOVEL")
     print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
