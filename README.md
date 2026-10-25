@@ -17,3 +17,6 @@ Some of the wishlist features to be implemented (soon!) include:
 - Complete quests to revive Littleheart Village!
 - ~~Discover the truth behind expedition 1459~~
 - And so much more!
+
+## How to Play!
+For now, this only works on Linux! To run, simply download either version of the release (for the best story experience, I'd recommend downloading the one not labelled "battle--" unless you're very excited to try the battle system, at which point, go ahead)!. Then simply run ./(file) in the terminal, and you can finally discover Littleheart for yourself! (Please note: art isn't exactly my thing... so all art -- if any -- will be added very close to the end of the project)
