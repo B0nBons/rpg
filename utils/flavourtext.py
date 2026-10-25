@@ -37,12 +37,12 @@ FOREST = {
         "perlos" : ["Why have plants and animals, when you can just combine them!", "Awww, c'mere Mossball!", "I'll hit you all the way to the stars!"],
         "marchienne" : ["...", "Disgusting. A parasitic abomination of nature.", "You aren't growing on me."],
         "duffaye" : ["No animal deserves this...", "At least it lived a nice life.", "I'll bury you after this.. You never deserved this, froggy.."],
-        "selapisa" : ["Moss paarasites are especially rare now...", "I'm sure a collector would pay a fortune for you!", "More moss than toad. A sad way to live."]
+        "selapisa" : ["Moss parasites are especially rare now...", "I'm sure a collector would pay a fortune for you!", "More moss than toad. A sad way to live."]
     },
     "Mold-Soaked Crocodile" : {
         "triton" : ["Finally, a real challenge.", "Perlos would want this..", "I'll remove the rot, so deep in your soul."],
         "perlos" : ["Huh... So this is where you went, Croco.", "It'll be for the best..", "Everything will be better. I promise."],
-        "marchienne" : ["...", "Perlos did say that crocodile that sat with her left one day, and never came back.", "You will be a crocodeadle when I'm done with you."],
+        "marchienne" : ["...", "Perlos did say that crocodile that sat with her left one day, and never came back.", "You will be a croco-dead-ile when I'm done with you."],
         "duffaye" : ["Oh come on.. I don't wanna tell Perlos...", "It's all for the greater good..", "I won't let you hurt any longer."],
         "selapisa" : {"Haha, a skin like that would be worth a fortune!", "Perlos... Wouldn't want to know.", "I'll put you out of your misery."}
     }

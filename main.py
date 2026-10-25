@@ -10,7 +10,7 @@ intro_play_ONCE =  "placehold"
 
 def main():
     global char
-    typewriter("Another quiet day. In the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
+    typewriter("Another quiet day in the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
 
     char_choice = protag_talk("...What is my name again?")
     garbage = input("(Before making options, you will have the chance to review previous dialouge and press ENTER in order to continue to your choice. Think carefully, for each choice may cause you to take an unexpected path)...\nPlease press ENTER.")
