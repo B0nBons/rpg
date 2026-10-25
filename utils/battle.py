@@ -43,6 +43,8 @@ def forest_fight(char = marchienne, boss=False):
     turn_count = 0 # define before loop to avoid error
 
     while player["current_vi"] > 0 and len(enemies) > 0:
+        # small loop here since i noticed that out of 10 tets, 3 times enemies got to negative vi and only died after being hit again
+        # nevermind my loop didnt work
         turn_count += 1
         print(colorama.Fore.YELLOW + f"(cool text effect) {turn_count} (cool text effect)")
         print(f"{player['name']} HP: {player['current_vi']}/{player['vi']} POTIONS: {player['potions']}")
@@ -90,7 +92,7 @@ def forest_fight(char = marchienne, boss=False):
                         victim = random.choice(enemies) 
                         dmg = player['temp_ap'] - target['dp']
                         victim['vi'] -= dmg
-                        mc(f"Perlose throws a fishing line at {victim['name']}! The unkindness of this deals an additional {dmg} damage!")
+                        mc(f"Perlos throws a fishing line at {victim['name']}! The unkindness of this deals an additional {dmg} damage!")
                         if victim['vi'] <= 0:
                             mc(f"Perlos fishes up another for her collection! {victim['name']} was defeated!")
                             enemies.remove(victim)
@@ -117,6 +119,20 @@ def forest_fight(char = marchienne, boss=False):
 
             # yeah thats the win idk man
             # now we have to do enemies (because undertale genocoide sim is not tuff)
+
+        elif choice == "USE POTION":
+            # for now, i dont know how much each potion will heal..... so im just gonna make each heal 15 since the game is a lil hard (for me)
+            if player['potions'] != 0:
+                # omg i just realised that potions go over the max hp lmao
+                if (player['current_vi'] + 15) > player['vi']:
+                    player['current_vi'] = player['vi']
+                    print(f"...Fruity? {char} healed to max VI!")
+                    player['potions'] -= 1
+                elif (player['current_vi'] + 15) <= (player['vi'] - 1):
+                    player['current_vi'] += 15
+                    print(f"Mildly cold. {char} healed to {player['current_vi']} VI!")
+            elif player['potions'] == 0: 
+                print("You're out of potions... The enemies seem pleased.")
 
         print("ENEMY TURN (COOL TEXT THING ON BOTH SIDES)")
         for enemy in enemies:

@@ -19,6 +19,7 @@ HARD_BOSS_FOREST = [
 def grab_forest(boss=False):
     if boss:
         return copy.deepcopy(HARD_BOSS_FOREST)
+    # i thought that maybe the hp/vi bug was because of it pointing to the same memory address, but it doesnt seem to be that so i honestly have NO idea how to fix that.... lol.
     
     num_enemies = random.randint(1,5)
     return (copy.deepcopy(random.choices(EASY_CHUDS_FOREST, k=num_enemies)))
