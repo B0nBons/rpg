@@ -154,8 +154,8 @@ def forest_fight(char = marchienne, boss=False):
             if char == "marchienne":
                 player['temp_ap'] += 1
                 mc(f"{char}: I won't let you do that again.")
-                print(f"{char.capitalize()} gained +1 AP")
-                if enemy_damage >= 4:
+                print(f"Marchienne gained +1 AP") # why was this char.captailize() why was i being extra lmao only marchienne does this
+                if enemy_damage >= 4: 
                     player['temp_ap'] += 1
                     mc(f"{char}: I'll make you pay.")
                     print("Marchienne gains an additional 1 AP...")
@@ -166,4 +166,3 @@ def forest_fight(char = marchienne, boss=False):
 
 
             # SHIT I FORGOT TO MAKE SPEED RELEVANT. ok i think itll just be irrelevant for now until i maybe make it into an actual visual novel ahh game
-forest_fight("perlos")

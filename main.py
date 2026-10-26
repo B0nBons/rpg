@@ -3,6 +3,7 @@ import time
 from pick import pick
 import colorama
 from utils.text_vfx import typewriter, protag_talk
+from utils.battle import forest_fight
 colorama.init(autoreset=True)
 
 intro_play_ONCE =  "placehold"
@@ -27,6 +28,7 @@ def main():
         typewriter("Granny Duffaye: As straight to the point as ever! I was told you need to go see Mirexio. I'm not sure of what the old hag wants from you, but she insisted it was urgent..")
         protag_talk(f"{char}: ... Urgent? Then I ought to go right away. Thank you for informing me.")
         typewriter("Granny Duffaye: (As formal as ever... Oh, when will you learn to relax, Triton?)")
+        forest_fight("triton")
 
     elif char[1] == 1:
         char = "Perlos"
@@ -36,6 +38,7 @@ def main():
         typewriter("Granny Duffaye: Kicked out? Yep. Nobody wanted that necromancy in our village. She told me it was urgent.")
         protag_talk(f"{char}: Thank you, Miss Duffaye! I can go see her now. What a shame... I almost beat my fishing record today...")
         typewriter("Granny Duffaye: (That child, with her head in the clouds... It's a miracle she's even lived this long!)")
+        forest_fight("perlos")
 
     elif char[1] == 2:
         char = "Marchienne"
@@ -45,6 +48,7 @@ def main():
         typewriter("Granny Duffaye: ...I was told you need to go see Mirexio. She said it was urgent..")
         protag_talk(f"{char}: Thank you for informing me. I shall go pay her a visit.")
         typewriter("Granny Duffaye: (...Even after she's left, I still can feel my heart pounding. I see why all the others fear her...)")
+        forest_fight("marchienne")
 
     elif char[1] == 3:
         char = "Duffaye"
@@ -54,6 +58,7 @@ def main():
         typewriter("Granny Duffaye: ...Yes, my dear boy. Mirexio. She told me that you ought to go visit her, as soon as possible.")
         protag_talk(f"{char}: Well then, of course I'm gonna go! Her home is a bit far out, so I'll start packing. Thanks gran!")
         typewriter("Granny Duffaye: (How he manages to see the good in everyone, and only the good... Is truly a question that not even I can answer.)")
+        forest_fight("duffaye")
     else:
         char = "Serlapisa" 
         protag_talk(f"{char}: Oh c'mon, you don't remember me? I'm Serlapisa. I used to tell your grandson I'd steal all his sheep and sell their wool. Remember?")
@@ -62,7 +67,7 @@ def main():
         typewriter("Granny Duffaye: We can discuss this later. I was told by Mirexio that you need to go see her. She told me it was urgent.")
         protag_talk(f"{char}: Mirexio? Wasn't she that witch who got kicked out? Hehehe, I bet she could make me an infinite money potion! I'll get going, thanks granny!")
         typewriter("Granny Duffaye: (She was the one who was tormenting Geomoros?! He told me his tormenter had been eaten by wolves!)")
-
+        forest_fight("serlapisa")
 
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
