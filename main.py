@@ -79,7 +79,10 @@ def main():
     typewriter("A (SOON TO BE) VISUAL NOVEL")
     print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
 
-    # FROM HERE ON, ONLY CALL ACTS BASED ON THE CHAR CHOICE
+    # yeah so we are not in fact doing a linear act thing, were making it (kinda) open world
+
+    while True:
+        pass
 
 if __name__ == "__main__":
     main()

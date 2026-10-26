@@ -8,10 +8,11 @@ from data.enemies import grab_forest
 from utils.flavourtext import FOREST 
 from data.character import triton, perlos, marchienne, duffaye, serlapisa
 from utils.text_vfx import protag_talk as mc
+from data.spells import spells
 # ok i need to go back and review all of the names bc serlapisa is called selapisa???
 colorama.init(autoreset=True)
 
-chars = {"triton" : triton, "perlos" : perlos, "marchienne" : marchienne, "duffaye" : duffaye, "selapisa" : serlapisa}
+chars = {"triton" : triton, "perlos" : perlos, "marchienne" : marchienne, "duffaye" : duffaye, "serlapisa" : serlapisa}
 # i think ive been spelling their names wrong.......
 
 def checK_mc():
@@ -112,10 +113,10 @@ def forest_fight(char = marchienne, boss=False):
                     return False # loser lol
 
             # now we check if enemies died
-
-            if len(enemies) == 0:
-                mc("BATTLE DECIDED... You win!")
-                return True # YAY
+            # AHA GUYS I FOUND TI THIS IS WHY THE WIN DOESNT ALWAYS CHECK
+        if len(enemies) == 0:
+            mc("BATTLE DECIDED... You win!")
+            return True # YAY
 
             # yeah thats the win idk man
             # now we have to do enemies (because undertale genocoide sim is not tuff)

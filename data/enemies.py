@@ -6,14 +6,31 @@ import random
 import copy
 
 EASY_CHUDS_FOREST = [
-    {"name" : "Apologetic Toadstool" , "vi" : 12, "ap" : 1, "dp" : 0, "magic_res" : 1, "xp" : 4},
-    {"name" : "Aggrivated Wisp", "vi" : 16, "ap" : 6, "dp" : 2, "magic_res" : 2, "xp" : 6 },
-    {"name" : "Not-Stationary Tree", "vi" : 20, "ap" : 5, "dp" : 1, "magic_res" : 0, "xp" : 6 } ,
-    {"name" : "Mossy Toad", "vi" : 8, "ap" : 5, "dp" : 0, "magic_res" : 0, "xp" : 4}
+    {"name" : "Apologetic Toadstool" , "vi" : 12, "ap" : 1, "dp" : 0, "magic_res" : 1, "xp" : 4, 
+     "loot" : {
+         "MUSHROOM" : 0.3 # its a dict bc i might add more loot idk
+     }},
+    {"name" : "Aggrivated Wisp", "vi" : 16, "ap" : 6, "dp" : 2, "magic_res" : 2, "xp" : 6,
+     "loot" : {
+          "GHOST IN A BOTTLE" : 0.2
+     } },
+    {"name" : "Not-Stationary Tree", "vi" : 20, "ap" : 5, "dp" : 1, "magic_res" : 0, "xp" : 6,
+     "loot" : {
+          "WOOD" : 0.3,
+          "STONE" : 0.5 # bc the trees throw rocks at u ig
+     }},
+    {"name" : "Mossy Toad", "vi" : 8, "ap" : 5, "dp" : 0, "magic_res" : 0, "xp" : 4,
+     "loot" : {
+          "MOSS" : 0.8,
+          "BERRIES" : 0.5
+     }}
 ]
 
 HARD_BOSS_FOREST = [
-    {"name": "Mold-Soaked Crocodile", "vi" : 30, "ap" : 8, "dp" : 2, "magic_res" : 1, "xp" : 16} #rouund up to even, prolly change xp later
+    {"name": "Mold-Soaked Crocodile", "vi" : 30, "ap" : 8, "dp" : 2, "magic_res" : 1, "xp" : 16,
+     "loot" : {
+         "CROCODILE SCALE" : .1
+     }} #rouund up to even, prolly change xp later
 ]
 
 def grab_forest(boss=False):
