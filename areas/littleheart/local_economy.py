@@ -4,7 +4,7 @@
 
 # side note: decide what the currency will be- coins? gold???
 
-from math import celi # rounds to ceiling bc the merchants are stingy
+from math import ceil # rounds to ceiling bc the merchants are stingyalso just learned its ceil not celi embarassing asf
 
 def merchant_price(item, daily_sale = False):
     base_price = 0
@@ -13,7 +13,7 @@ def merchant_price(item, daily_sale = False):
             base_price = items[item] # i never want to write if items in items items is item ever again what in the tongue twister >:(
             break # I LOVE BREAK STATEMENTS (my teacher in 8th grade said that if you had to use a break statement, ur code was ahh but i love using breaks)
     if daily_sale == True:
-        return celi(base_price * .8)
+        return ceil(base_price * .8)
     # i think we can use up to 2 decimals(?) hmmmmmmmmmmmmmmmmmm idk lowkey thats future me issue
     elif daily_sale == False:
         return base_price # ok so i think 20 perent off might be a lil much but well see (guys if ur reading this pls gimme feedback)

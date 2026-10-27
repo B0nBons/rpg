@@ -20,7 +20,7 @@ def fishery(mc):
     if mc == "perlos":
         print("yes this is perlos fishery where we eat fih")
 
-def armory(mc)L
+def armory(mc):
     if mc == "marchienne":
         print("armory? more like ____ fun joke btw")
 
