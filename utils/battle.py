@@ -11,12 +11,11 @@ from utils.text_vfx import protag_talk as mc
 from data.spells import spells
 # ok i need to go back and review all of the names bc serlapisa is called selapisa???
 colorama.init(autoreset=True)
+# yeah so we have gone back to fix and implement magic into the battle system since it was just making me super mad
 
 chars = {"triton" : triton, "perlos" : perlos, "marchienne" : marchienne, "duffaye" : duffaye, "serlapisa" : serlapisa}
 # i think ive been spelling their names wrong.......
 
-def checK_mc():
-    pass
 
 def grab_MC_talk(enemy_name, mc):
     if enemy_name in FOREST:
@@ -63,7 +62,6 @@ def forest_fight(char = marchienne, boss=False):
         trash = input("Press ENTER when ready to make a choice...")
         choices = ["ATTACK", "CAST SPELL", "USE POTION", "FLEE"]
         title = f"What will {char} do?"
-        print("DEV NOTE: I HAVE NOT IN FACT DONE POTIONS YET!!!")
         choice, trash = pick(choices, title)
 
         if choice == "ATTACK" : 
@@ -91,7 +89,7 @@ def forest_fight(char = marchienne, boss=False):
                 if followup_chance <= 70: # IT IS NOT MEANT TO BE 70 OR MORE THIS IS FOR TESTING IF THIS IS STILL HERE BY LIKE WEEK FOUR PLEASE TELL ME TO DELETE THIS BECAUSE PERLOS IS NOT MEANT TO BE A SPEEDRUNNER
                     if len(enemies) > 0:
                         victim = random.choice(enemies) 
-                        dmg = player['temp_ap'] - target['dp']
+                        dmg = player['temp_ap'] - victim['dp'] # finally found the err- had it has target['dp'] instead of victim
                         victim['vi'] -= dmg
                         mc(f"Perlos throws a fishing line at {victim['name']}! The unkindness of this deals an additional {dmg} damage!")
                         if victim['vi'] <= 0:
@@ -125,7 +123,7 @@ def forest_fight(char = marchienne, boss=False):
             # for now, i dont know how much each potion will heal..... so im just gonna make each heal 15 since the game is a lil hard (for me)
             if player['potions'] != 0:
                 # omg i just realised that potions go over the max hp lmao
-                if (player['current_vi'] + 15) > player['vi']:
+                if (player['current_vi'] + 15) >= player['vi']:
                     player['current_vi'] = player['vi']
                     print(f"...Fruity? {char} healed to max VI!")
                     player['potions'] -= 1

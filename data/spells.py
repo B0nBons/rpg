@@ -133,7 +133,12 @@ spells = {
         "WIND" : {
             "name" : "Winds of Change",
             "style" : "Wind", 
-            "cost" : 3
+            "cost" : 3,
+            "power" : 5,
+            "dot_strength" : 4,
+            "dot_duration" : 3,
+            "type" : "damage-over-time",
+            "info" : "Slash an enemy with the power of a gale. For three turns, the wind cuts into the enemy, dealing 4 damage for 3 turns."
         }
     }
 }
