@@ -28,12 +28,20 @@ SIDE_QUESTS = {
 # side note, but i finally found the library i used on my first big python project!!! we loev tabulate
 
 def load_available_quests(save, mc):
-    for quest_type, story_log in save.items():
-        for quest_NAME, status in story_log.items():
-            print(f"Main location: {quest_type}, sub location {quest_NAME}, status {status}")
-            if quest_NAME == mc:
-                print("I HAVE FOUND THE MC QUEST OF " + quest_NAME)
-                continue
+
+    available_quests = []
+
+    # yes, i am hardcoding it in, mostly since i dont foresee more than 3 types of quests existing
+    for quest_name, status in save['main_story'].items():
+        print(quest_name)
+        if MAIN_STORY_DEPENDENCIES[quest_name] == None or save['main_story'][quest_name] == "done":
+            print("UNLOCKED BTW")
+            available_quests.append(quest_name)
+    for quest_name, status in save['side_quests'].items():
+        print(quest_name)
+    for quest_name, status in save['side_quests'].items():
+        print(quest_name)
+
 def quest_board(char):
     pass
 
@@ -58,7 +66,7 @@ save = {
         "perlos_act1" : "done", # will add more acts later, mostly just for testing purposes rn
         "duffaye_act1" : "done",
         "marchienne_act1" : "done",
-        "serlapsia_act1" : "done",
+        "serlapsia_act1" : "done", 
 
     }
 }
