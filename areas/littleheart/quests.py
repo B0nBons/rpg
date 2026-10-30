@@ -19,9 +19,13 @@ MAIN_STORY_DEPENDENCIES = {
     "FINALE" : "act6"
 }
 
-SIDE_QUESTS = {
+SIDE_QUEST_DEPENDENCIES = {
     # quest name : dependencies
     "A Warrior's Guide To... Shopkeeping?" : "act1"
+}
+
+CHAR_QUEST_DEPENDENCIES = {
+    "perlos_act1" : None
 }
 
 # add more side quests later, now adding the actually important part of it (the CODE.)
@@ -33,14 +37,27 @@ def load_available_quests(save, mc):
 
     # yes, i am hardcoding it in, mostly since i dont foresee more than 3 types of quests existing
     for quest_name, status in save['main_story'].items():
-        print(quest_name)
-        if MAIN_STORY_DEPENDENCIES[quest_name] == None or save['main_story'][quest_name] == "done":
-            print("UNLOCKED BTW")
-            available_quests.append(quest_name)
+        if status != "done":
+            req = MAIN_STORY_DEPENDENCIES.get(quest_name)
+            if req == None or save['main_story'].get(req) == "done":
+                available_quests.append(quest_name)
+        
     for quest_name, status in save['side_quests'].items():
-        print(quest_name)
-    for quest_name, status in save['side_quests'].items():
-        print(quest_name)
+        if status != "done":
+            req = SIDE_QUEST_DEPENDENCIES.get(quest_name)
+            if req == None or save['main_story'].get(req) == "done":
+                available_quests.append(quest_name)
+
+    for quest_name, status in save['character_quests'].items():
+        if status != "done":
+            if mc not in quest_name:
+                req = CHAR_QUEST_DEPENDENCIES.get(quest_name)
+                if req == None or save['main_story'].get(req) == "done":
+                    available_quests.append(quest_name)
+
+    print(available_quests)
+                # yeah im lazy and just copy pasted the first logic, but it should work right
+
 
 def quest_board(char):
     pass
@@ -59,14 +76,14 @@ save = {
         "FINALE" : "not_done"
     },
     "side_quests" : {
-        "a" : "done"
+        "A Warrior's Guide To... Shopkeeping?" : "not_done"
     },
     "character_quests" : {
-        "triton_act1" : "done", # might change this to be grouped by char, might not yeah i am def over organising ts, its  staying like this
-        "perlos_act1" : "done", # will add more acts later, mostly just for testing purposes rn
-        "duffaye_act1" : "done",
-        "marchienne_act1" : "done",
-        "serlapsia_act1" : "done", 
+        "triton_act1" : "not_done", # might change this to be grouped by char, might not yeah i am def over organising ts, its  staying like this
+        "perlos_act1" : "not_done", # will add more acts later, mostly just for testing purposes rn
+        "duffaye_act1" : "not_done",
+        "marchienne_act1" : "not_done",
+        "serlapsia_act1" : "not_done", 
 
     }
 }
