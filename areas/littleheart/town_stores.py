@@ -1,5 +1,6 @@
 # OK TOWN STORE TIME
 from utils.text_vfx import protag_talk as mc, typewriter as npc
+from areas.littleheart.quests import quest_board
 # i wish i could just make all print statements automatically use mc/npc talk based on context clues ts a pain in the ahh
 
 # PLACEHOLDER SAVE STATE WILL BE USED
@@ -19,17 +20,29 @@ def forge(mc):
 def fishery(mc): 
     if mc == "perlos":
         print("yes this is perlos fishery where we eat fih")
+    else:
+        pass
 
 def armory(mc):
     if mc == "marchienne":
         print("armory? more like ____ fun joke btw")
+    else:
+        pass
 
 def farm(mc):
     if mc == "duffaye": # ok guys i dont know wtf duffate is gonna be doing bc he literally just owns a petting zoo OK I GOT IT HES GONNA BE A PETTING ZOO BUT BESTIARY THINGY
         print("dont mess with my homies (theyre all sheep)")
+    else:
+        pass
 
 def general_store(mc):
     if mc == "serlapisa":
         print("why is she the only one who seems to logically be able to run a store")
+    else:
+        pass
+
+def tavern():
+    npc("Sirius: ...Who you are doesn't matter to me. Get to the quests.")
+    quest_board()
 # now that everybodys stores have been defined im gonna go back and start implementing everything
 # these comments are just helping me think out loud (talking to my laptop would make me seem insane)

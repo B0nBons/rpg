@@ -40,30 +40,31 @@ def load_available_quests(save, mc):
         if status != "done":
             req = MAIN_STORY_DEPENDENCIES.get(quest_name)
             if req == None or save['main_story'].get(req) == "done":
-                available_quests.append(quest_name)
+                available_quests.append([quest_name, "Main Story"])
         
     for quest_name, status in save['side_quests'].items():
         if status != "done":
             req = SIDE_QUEST_DEPENDENCIES.get(quest_name)
             if req == None or save['main_story'].get(req) == "done":
-                available_quests.append(quest_name)
+                available_quests.append([quest_name, "SIde Story"])
 
     for quest_name, status in save['character_quests'].items():
         if status != "done":
             if mc not in quest_name:
                 req = CHAR_QUEST_DEPENDENCIES.get(quest_name)
                 if req == None or save['main_story'].get(req) == "done":
-                    available_quests.append(quest_name)
+                    available_quests.append([quest_name, "Character Story"])
 
-    print(available_quests)
-                # yeah im lazy and just copy pasted the first logic, but it should work right
+    return available_quests
 
+                # yeah im lazy and just copy pasted the first logic, but it should work right yay it worked, just pushed!
 
-def quest_board(char):
-    pass
+# NOTE: NAME THE FREAKING MAIN QUESTS SOMETHING OTHER THAN ACT1 AND ACT2
 
-# making a quick save skeleton to see if my logic works
-# ok, so first for loop should return main story, then a SECOND for loop has to go inside the func, and print out the act/status? devlog here as benchmark
+def quest_board(save, char):
+    quests = load_available_quests(save, char)
+    print(tabulate(quests, headers = ["Mission", "Focus"], tablefmt="fancy_grid"))
+
 save = {
     # format of act : status (done/not_done)
     "main_story" : {
@@ -88,6 +89,6 @@ save = {
     }
 }
 
-chosen_mc = "triton"
-
-load_available_quests(save, chosen_mc)
+# making a quick save skeleton to see if my logic works
+# ok, so first for loop should return main story, then a SECOND for loop has to go inside the func, and print out the act/status? devlog here as benchmark
+# ALRIGHT GUYS WE ARE DONE WITH THIS FILE (FOR NOW)
