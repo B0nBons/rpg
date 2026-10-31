@@ -18,14 +18,21 @@ SAVE_SKELETON = {
         "FINALE" : "not_done"
     },
     "side_quests" : {
-        "A Warrior's Guide To... Shopkeeping?" : "not_done"
+        "A Warrior's Guide To... Shopkeeping?" : "not_done",
+        "A g-g-ghost?!" : "not-done"
     },
     "character_quests" : {
-        "triton_act1" : "not_done", # might change this to be grouped by char, might not yeah i am def over organising ts, its  staying like this
-        "perlos_act1" : "not_done", # will add more acts later, mostly just for testing purposes rn
-        "duffaye_act1" : "not_done",
-        "marchienne_act1" : "not_done",
-        "serlapsia_act1" : "not_done", 
+        "Help Wanted, Please" : "not_done", # triton act 1
+        "More Help Wanted, Please" : "not_done",
+        "Help Needed, Please" : "not_done",
+        "A Fishy Surprise" : "not_done", # perlos act1
+        "Fish Outta Water -- HELP!!!" : "not_done",
+        "O Flying Fish!": "not_done",
+        "The Price of Love" : "not_done", # duffaye (he stepped on his sheeps foot or som)
+        "The Importance of Love" : "not_done",
+        "I'm Sorry, Sheperus!!!" : "not_done",
+        "Request: Preventing Disaster" : "not_done", # march
+        "EASY GOLD OPPORTUNITY" : "not_done", # serlarp ofc
 
     },
     "forge" : {
@@ -40,7 +47,7 @@ def save_game(save_data, file_loc):
     with open(file_loc, "w") as f:
         json.dump(save_data)
 
-def load_game(save_data, file_loc):
+def load_game(save_data, file_loc): # this probably does NOT work right
     try:
         with open(file_loc, 'r') as f:
             load = json.load(f)

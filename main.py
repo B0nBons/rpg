@@ -4,6 +4,7 @@ from pick import pick
 import colorama
 from utils.text_vfx import typewriter, protag_talk
 from utils.battle import forest_fight
+from areas.littleheart.littleheart import village
 colorama.init(autoreset=True)
 
 intro_play_ONCE =  "placehold"
@@ -72,14 +73,13 @@ def main():
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
     print(".. -. / - .... . / . -. -.. --..-- / .-- . / .- .-.. .-.. / .-.. .. . -..")
-    #typewriter("""
-#▀█▀ █░█ █▀▀   █░░ █ ▄▀█ █▀█   █░█░█ ▄▀█ █▀   █▀▄▀█ █▀▀
-#░█░ █▀█ ██▄   █▄▄ █ █▀█ █▀▄   ▀▄▀▄▀ █▀█ ▄█   █░▀░█ ██▄""", 0.08)
-
     typewriter("A (SOON TO BE) VISUAL NOVEL")
     print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
 
     # yeah so we are not in fact doing a linear act thing, were making it (kinda) open world
+
+    village()
+    # im just putting village here for now, itll be a big loop later
 
     while True:
         pass
