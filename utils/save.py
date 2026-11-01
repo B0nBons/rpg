@@ -57,20 +57,28 @@ def new_save():
     return savefile
 
 def save_game(save_data, file_loc="data/save.json"):
+    location = os.path.dirname(file_loc)
+    if location and not os.path.exists(location):
+            os.makedirs(file_loc)
     with open(file_loc, "w") as f:
         json.dump(save_data, f)
         # yeah so idfk how to make this work guys pls HELP
 
 def load_game(file_loc="data/save.json"): # this probably does NOT work right
-    try: # idk why i need save data actually, might jus be a chud
+    if not os.path.exists(file_loc) or os.path.getsize(file_loc) == 0:
+        NEW_save = new_save()
+        save_game(NEW_save, file_loc)
+    try:
         with open(file_loc, 'r') as f:
             load = json.load(f)
 
-        # trying to make it less hardcoded bc this will be a big problem latter 
-        for thing in SAVE_SKELETON: # thing is the item in save eg forge
-            if thing not in load: # if the item is not in the given save file
-                load[thing] = SAVE_SKELETON[thing] # make the item the same as the generic 
-                # so this may be a problem later (i genuinely forgot what i was thinking, but ik it will be a problem at some point.... so take that as you will lol)
+        for area in SAVE_SKELETON:
+            if area not in load:
+                load[area] = SAVE_SKELETON[area].copy()
+            else:
+                for inside in SAVE_SKELETON[area]:
+                    if inside not in load[area]:
+                        load[area][inside] = SAVE_SKELETON[area][inside]
         
         return load
     except Exception as e:
