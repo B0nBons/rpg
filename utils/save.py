@@ -50,6 +50,18 @@ SAVE_SKELETON = {
 
 # yeah so i overcomplicated it, i just need to make a "basic" save yk??
 
+
+# ONLY this func is ai, solely because after packaging, the game threw a bunch of permission errors
+def good_save_path():
+    home_dir = os.path.expanduser("~")
+    game_folder = os.path.join(home_dir, ".my_rpg_game")
+    
+    # Create the folder if it doesn't exist yet
+    if not os.path.exists(game_folder):
+        os.makedirs(game_folder)
+        
+    return os.path.join(game_folder, "save.json")
+
 def new_save():
     savefile = {}
     for val, item in SAVE_SKELETON.items():
@@ -57,6 +69,7 @@ def new_save():
     return savefile
 
 def save_game(save_data, file_loc="data/save.json"):
+    file_loc = good_save_path()
     location = os.path.dirname(file_loc)
     if location and not os.path.exists(location):
             os.makedirs(file_loc)
@@ -65,6 +78,7 @@ def save_game(save_data, file_loc="data/save.json"):
         # yeah so idfk how to make this work guys pls HELP
 
 def load_game(file_loc="data/save.json"): # this probably does NOT work right
+    file_loc = good_save_path()
     if not os.path.exists(file_loc) or os.path.getsize(file_loc) == 0:
         NEW_save = new_save()
         save_game(NEW_save, file_loc)
