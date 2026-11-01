@@ -13,10 +13,10 @@ intro_play_ONCE =  "placehold"
 def main():
     save_data = load_game()
     global char
-    #typewriter("Another quiet day in the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
+    typewriter("Another quiet day in the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
 
     char_choice = protag_talk("...What is my name again?")
-   # garbage = input("(Before making options, you will have the chance to review previous dialouge and press ENTER in order to continue to your choice. Think carefully, for each choice may cause you to take an unexpected path)...\nPlease press ENTER.")
+    garbage = input("(Before making options, you will have the chance to review previous dialouge and press ENTER in order to continue to your choice. Think carefully, for each choice may cause you to take an unexpected path)...\nPlease press ENTER.")
     char_list = ['Triton (he/him/his)', 'Perlos (she/her/hers)', 'Marchienne (they/them/theirs (NOTE: They do use "miss" as of now, I hope thats not a major issue for now))', 'Duffaye (he/him/his)', 'Serlapisa (she/her/hers)']
     char = pick(char_list, char_choice)
 
@@ -70,14 +70,23 @@ def main():
 
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
+    typewriter("Just then, you spot creatures from the forest, getting dangerously close to the village...")
+    protag_talk("(...Oh. I am a guardian now, after all. This'll be a great first test!)")
+    win = forest_fight(char)
+    if win():
+        protag_talk("(Not half-bad for my first battle!)")
+    else:
+        protag_talk("(... I'll get more training.)")
+
+    time.sleep(0.2)
     print(".. -. / - .... . / . -. -.. --..-- / .-- . / .- .-.. .-.. / .-.. .. . -..")
     typewriter("A (SOON TO BE) VISUAL NOVEL")
     print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
-    protag_talk("... Regardless, better go to the village and get ready.")
+    time.sleep(0.5)
 
     # yeah so we are not in fact doing a linear act thing, were making it (kinda) open world
 
-    village()
+    village(save_data)
     # im just putting village here for now, itll be a big loop later
 
 if __name__ == "__main__":

@@ -5,17 +5,13 @@ from areas.littleheart.quests import quest_board
 
 # PLACEHOLDER SAVE STATE WILL BE USED
 
-def forge(mc):
-    # setup some things that need to be remembered for later
-    # NEVERMIND WE NEED TO DO THE GAME STATE BRO
-    # omg maybe i should make it so that whatever mc you choose owns a store to get some coins from it
-    # im also trying to hit most my coding today and friday bc its halloween! 
+def forge(save):
+    char = save['player_info']['name']
+    # ok we are finally gonna start the shop code, w triton being the main mc nevermind im doing this next week bc its a massive update
     if mc == "triton":
-        print("yeah this is my store fr")
-        # im not making tritons shop yet guys
+        print("")
     else:
         npc(f"Triton: Hm? Hello {mc}. It's been a while since you've come here.")
-        
 
 def fishery(mc): 
     if mc == "perlos":
@@ -41,8 +37,10 @@ def general_store(mc):
     else:
         pass
 
-def tavern():
+def tavern(save):
     npc("Sirius: ...Who you are doesn't matter to me. Get to the quests.")
-    quest_board()
+    npc("Sirius: How to accept quests? Well, just go ask the person for more details. I don't wanna post people's business everywhere.")
+    quest_board(save)
+    garbage = input("(... Well, I'm ready to get out now. [PRESS ENTER TO LEAVE])")
 # now that everybodys stores have been defined im gonna go back and start implementing everything
 # these comments are just helping me think out loud (talking to my laptop would make me seem insane)

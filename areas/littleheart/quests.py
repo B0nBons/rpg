@@ -1,13 +1,13 @@
 # QUEST BOARD TIME YESSS
 # actually nevermind i have to make the village exist first
-# first its gonna be a skeleton of the code since i really dont want to start the saves
+# first its gonna be a skeleton of the code since i really dont want to start the saves SAVE HAS BEEN MAYBE DONE
 # ok in order to keep development moving at a decently-goodish pace, ive decided to use PLACEHOLDER variables that WILL be changed later to make better logic
-# also chat wish me luck (i have a bio test on friday and calc test on monday, lucky me... and ofc i agreed to go trick or treating with my friend so now I NEED to finish my hours asap)
+# we survived!!!
 
-# THEORETICAL IMPORTS
-# from data.save import save
-# from ???, import chosen_mc
+# THEORETICAL IMPORTS (no longer theoretical)
+from utils.save import load_game, save_game
 from tabulate import tabulate
+import time
 
 MAIN_STORY_DEPENDENCIES = {
     "act1" : None,
@@ -40,20 +40,20 @@ def load_available_quests(save, mc):
         if status != "done":
             req = MAIN_STORY_DEPENDENCIES.get(quest_name)
             if req == None or save['main_story'].get(req) == "done":
-                available_quests.append([quest_name, "Main Story"])
+                available_quests.append([quest_name, "Chasing Glory"])
         
     for quest_name, status in save['side_quests'].items():
         if status != "done":
             req = SIDE_QUEST_DEPENDENCIES.get(quest_name)
             if req == None or save['main_story'].get(req) == "done":
-                available_quests.append([quest_name, "SIde Story"])
+                available_quests.append([quest_name, "Adventure Requests"])
 
     for quest_name, status in save['character_quests'].items():
         if status != "done":
             if mc not in quest_name:
                 req = CHAR_QUEST_DEPENDENCIES.get(quest_name)
                 if req == None or save['main_story'].get(req) == "done":
-                    available_quests.append([quest_name, "Character Story"])
+                    available_quests.append([quest_name, "Local Help"])
 
     return available_quests
 
@@ -61,11 +61,20 @@ def load_available_quests(save, mc):
 
 # NOTE: NAME THE FREAKING MAIN QUESTS SOMETHING OTHER THAN ACT1 AND ACT2
 
-def quest_board(save, char):
+def quest_board(save=None, char=None):
+    if save == None:
+        save = load_game()
+    if char == None:
+        try:
+            char = save['player_info']['name']
+        except Exception as err:
+            print("ERROR: Charactoer not Found")
     quests = load_available_quests(save, char)
+    time.sleep(0.1)
     print(tabulate(quests, headers = ["Mission", "Focus"], tablefmt="fancy_grid"))
 
-save = {
+# the save file below is just for testing bc im lazy
+SAVE_TEST_FILE = {
     # format of act : status (done/not_done)
     "main_story" : {
         "act1" : "done",
@@ -88,7 +97,3 @@ save = {
 
     }
 }
-
-# making a quick save skeleton to see if my logic works
-# ok, so first for loop should return main story, then a SECOND for loop has to go inside the func, and print out the act/status? devlog here as benchmark
-# ALRIGHT GUYS WE ARE DONE WITH THIS FILE (FOR NOW)
