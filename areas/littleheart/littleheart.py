@@ -10,7 +10,7 @@ def village(save):
     print("MP restored to max.")
     time.sleep(0.1)
     # only for now to introduce quests and stuff
-    print("Despite having lived here forever, you nevr thought the day would ever come. Becoming a licensed guardian was no small feat...")
+    print("Despite having lived here forever, you never thought the day would ever come. Becoming a licensed guardian was no small feat...")
     print("Alas, you had to go to the tavern to get licensed...")
     print("You decide to go to the other stores after going to the tavern.")
     time.sleep(0.2)

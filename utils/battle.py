@@ -9,6 +9,8 @@ from utils.flavourtext import FOREST
 from data.character import triton, perlos, marchienne, duffaye, serlapisa
 from utils.text_vfx import protag_talk as mc
 from data.spells import spells
+from data.emotions import EMOTIONS
+
 # ok i need to go back and review all of the names bc serlapisa is called selapisa???
 colorama.init(autoreset=True)
 # yeah so we have gone back to fix and implement magic into the battle system since it was just making me super mad
@@ -21,6 +23,24 @@ def grab_MC_talk(enemy_name, mc):
     if enemy_name in FOREST:
         lines = FOREST[enemy_name] # review dicts bc i do not remember this at all
 
+# NOTE: some things should NOT be in forest fight and should just be sepearte funcs bc itll be used later
+
+def add_emotion(ch, emotion):
+    ch['emotion'] = emotion
+    stat_change = EMOTIONS[emotion] # emotion emotion jus say ur emo
+    ch['temp_ap'] += stat_change['AP']
+    ch['temp_dp'] += stat_change['DP']
+    # omg i should add emotion flavourtext LATER ofc
+    mc(f"{ch.upper()} is feeling {emotion}! AP is now {ch['temp_ap']}! DP is now {ch['temp_dp']}")
+
+# emotions stay for X turns or som idk, add a clear emo func if i do make emotions just leave (that sound so emo)
+
+def clear_emotion(char, emotion):
+        char['temp_ap'] -= EMOTIONS[emotion]['AP']
+        char['temp_ap'] -= EMOTIONS[emotion]['AP']
+        char['emotion'] = None
+        mc(f"{char.upper()} is no longer {emotion}! AP is now {char['temp_ap']}! DP is now {char['temp_dp']}")
+        
 def forest_fight(char = marchienne, boss=False):
     if char not in chars:
         print("yo this means the char is invalid")
@@ -30,6 +50,8 @@ def forest_fight(char = marchienne, boss=False):
     player['current_vi'] = player['vi']
     player['temp_ap'] = player['ap']
     player['temp_dp'] = player['dp']
+    player['current_mp'] = player['magic'] * 3 # just making up number for now
+    player['max_mp'] = player['current_mp'] # automatiocally just max the mp
 
     enemies = grab_forest(boss=boss) # goofiest ahhs formatting ive seen 
     print(colorama.Fore.RED + colorama.Style.BRIGHT + "\n(cool text thing) COMBAT CONFIRMED (cool text thing but right side)\n")
@@ -51,7 +73,7 @@ def forest_fight(char = marchienne, boss=False):
 
         # we add the turn passives (literally jus triton fn)
 
-        if char == "Triton":
+        if char == "triton": # tysm for this i genuinely did not notice lmao
             if turn_count == 4:
                 player['temp_dp'] += 2
                 print("Triton gains +2DP (PASSIVE)")
@@ -97,9 +119,13 @@ def forest_fight(char = marchienne, boss=False):
                             enemies.remove(victim)
 
         elif choice == "CAST SPELL":
-             mc("!!! A magical power seems to be awakening....")
-             print("my bad gang i havent done this yet, also nobody gets magic until chapter 2 or 3, so hold your horses")
-             mc("You get the feeling that being patient will make your life a lot better. You decide to let the ENEMIES attack first.")
+            # finally adding spells (ts gonna take years)
+            # not all spells are gonna be added at once, for now im just gonna add DAMAGE AND HEAL
+            usable_spells = []
+            # nevermind im way too demotivated rn to do it
+            mc("!!! A magical power seems to be awakening....")
+            print("my bad gang i havent done this yet, also nobody gets magic until chapter 2 or 3, so hold your horses")
+            mc("You get the feeling that being patient will make your life a lot better. You decide to let the ENEMIES attack first.")
 
         elif choice == "FLEE":
             if boss == True:
@@ -130,6 +156,7 @@ def forest_fight(char = marchienne, boss=False):
                 elif (player['current_vi'] + 15) <= (player['vi'] - 1):
                     player['current_vi'] += 15
                     print(f"Mildly cold. {char} healed to {player['current_vi']} VI!")
+                    player['potions'] -= 1 # also thank you for noticing that i forgot this (embarassing af)
             elif player['potions'] == 0: 
                 print("You're out of potions... The enemies seem pleased.")
 

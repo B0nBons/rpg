@@ -11,13 +11,13 @@ SAVE_SKELETON = {
         "gold" : 0},
 
     "main_story" : {
-        "act1" : "done",
-        "act2" : "not_done",
-        "act3" : "not_done", 
-        "act4" : "not_done",
-        "act5" : "not_done",
-        "act6" : "not_done",
-        "FINALE" : "not_done"
+        "Mirexio, The Hated" : "not_done",
+        "Elysia, The Explorer" : "not_done",
+        "Twilia, The Lost" : "not_done", 
+        "Nemaro, The Seeker" : "not_done",
+        "Klysari, The Queen" : "not_done",
+        "Rumento, The Traitor" : "not_done",
+        "Mirexio, The Storyteller" : "not_done"
     },
     "side_quests" : {
         "A Warrior's Guide To... Shopkeeping?" : "not_done",

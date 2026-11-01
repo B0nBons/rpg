@@ -48,6 +48,32 @@ FOREST = {
     }
 }
 
+# so i decided to not do spells, and instead add enemy death text, and also something if you decide to use some insane -100vi move on an emey with like 10vi (you monster)
+
+FOREST_KILL = {
+    "Apologetic Toadstool" : {
+        "triton" : ["My life really is just filled with random occurences.", "For what it's worth... Mushroom soup is better."],
+        "perlos" : ["...Ewwww. It's all mushy now.", "This just makes me appreciate my dear fish..."],
+        "marchienne" : ["Unfit to be consumed.", "I don't have ""mush"" to say."],
+        "duffaye" : ["...", "Mushroom or not... did it really want to-?"],
+        "selapisa" : ["(No way that thing is edible NOW...)", "(Urk. Disgusting)"]
+    },
+    "Aggrivated Wisp" : {
+        "triton" : ["...Goodbye, my friend.", "May we meet again, someday.", "You may rest now.."],
+        "perlos" : ["Hahaha! Byebye ghost!", "No ghost could ever hate me!"],
+        "marchienne" : ["You will not be forgotten. But it's time to go.", "You deserved none of this, my comrade."], # communist ahh march
+        "duffaye" : ["...At least you weren't alive..?", "Uhm.. Sorry about that."],
+        "selapisa" : ["You just had to leave, didn't you?!", "Ahh. I can see my profit floating away. Wait. NO! COME BACK!"]
+    },
+    "Not-Stationary Tree" : {
+        "triton" : ["A tree. This is what my years of training were meant for.", "(................)"],
+        "perlos" : ["Yeah, I'm content with slimy fish." "I prefer my trees still."],
+        "marchienne" : ["Truly, a trage-tree.", "..."],
+        "duffaye" : ["(...Do trees count as living, if they're simply puppets to the rot?)", "At least it can't talk.."],
+        "selapisa" : ["That tree... It didn't even leave anything?!", "(Not even a collector would pay for this wood. It's all gross and rotten.)"]
+    }
+}
+
 #triton
 #perlos
 #marchienne

@@ -11,7 +11,7 @@ spells = {
             "cost" : 3,
             "power" : 12, # ts gonna make the entire game unbalanced again
             "type" : "parry",
-            "info" : "Buff the next attack to deal +4 damage. Additionally, gain an additional 50 percent chance to perform a perfect parry, reflecting all damage back to the attacker."
+            "info" : "Buff the next attack to deal +4 damage. Additionally, gain a 50 percent chance to perform a perfect parry, reflecting all damage back to the attacker."
         },
         "BLAZING" : {
             "name" : "Blazing Wasteland",
@@ -91,7 +91,7 @@ spells = {
             "cost" : 7, #high cost bc itll be op or som
             "power" : 28, # yeah idk powerscaling, call tobias fox
             "type" : "damage",
-            "info" : "Attempt to finish off an enemy. If the enemy is killed, gain RECKLESS. Otherwise, lose 5VI (If the VI COST exceeds current VI, set VI to 1)." #                                                                                         might add emotions? like "RECKLESS" which can incr atk and lower def??? im gonna put it in but ill check it later this is spaced out bc i dont need to be called emo
+            "info" : "Attempt to finish off an enemy. If the enemy is killed, gain RECKLESS. Otherwise, lose 5VI (If the VI COST exceeds current VI, set VI to 1)." # will have to be added later                                                                                        might add emotions? like "RECKLESS" which can incr atk and lower def??? im gonna put it in but ill check it later this is spaced out bc i dont need to be called emo
         },
 
         "JOKE" : {

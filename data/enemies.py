@@ -33,6 +33,8 @@ HARD_BOSS_FOREST = [
      }} #rouund up to even, prolly change xp later
 ]
 
+
+
 def grab_forest(boss=False):
     if boss:
         return copy.deepcopy(HARD_BOSS_FOREST)
