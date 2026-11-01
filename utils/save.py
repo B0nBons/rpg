@@ -1,5 +1,6 @@
 import json
 import os
+# literally forgot ts got imported
 
 # ok so ive never had to code in saving before so this is probably gonna be a hell of a ride
 SAVE_SKELETON = {
@@ -47,6 +48,13 @@ SAVE_SKELETON = {
     }
 }
 
+# yeah so i overcomplicated it, i just need to make a "basic" save yk??
+
+def new_save():
+    savefile = {}
+    for val, item in SAVE_SKELETON.items():
+        savefile[val] = item.copy()
+    return savefile
 
 def save_game(save_data, file_loc="data/save.json"):
     with open(file_loc, "w") as f:
@@ -67,3 +75,5 @@ def load_game(file_loc="data/save.json"): # this probably does NOT work right
         return load
     except Exception as e:
         print("Error reading savefile. " + str(e))
+        # OK I MAY HAVE FIGURED IT OUT (!!!) 
+        # when loading the file, it might not even exist and so itll error i think maybe idk
