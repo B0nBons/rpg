@@ -5,11 +5,13 @@ import colorama
 from utils.text_vfx import typewriter, protag_talk
 from utils.battle import forest_fight
 from areas.littleheart.littleheart import village
+from utils.save import load_game, save_game
 
 intro_play_ONCE =  "placehold"
 # weekly theme is outdoors so maybe start with the more adventure-y parts
 
 def main():
+    save_data = load_game()
     global char
     typewriter("Another quiet day in the home you know as Littleheart Village. As you walk past the once-lively town square, you can't help but think about the past. So much has changed in the past year. It feels almost surreal. You look at your reflection in the puddle. Who was that, staring back at you?")
 
@@ -64,11 +66,14 @@ def main():
         protag_talk(f"{char}: Mirexio? Wasn't she that witch who got kicked out? Hehehe, I bet she could make me an infinite money potion! I'll get going, thanks granny!")
         typewriter("Granny Duffaye: (She was the one who was tormenting Geomoros?! He told me his tormenter had been eaten by wolves!)")
 
+    save_data['player_info']['name'] = char # im crine, used == isntead of = and spent a while trying to figure ts out
+
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
     print(".. -. / - .... . / . -. -.. --..-- / .-- . / .- .-.. .-.. / .-.. .. . -..")
     typewriter("A (SOON TO BE) VISUAL NOVEL")
     print("-... ..- - / .. - / .-- .- ... / -. . ...- . .-. / - .... . .. .-. / ..-. .- ..- .-.. -")
+    protag_talk("... Regardless, better go to the village and get ready.")
 
     # yeah so we are not in fact doing a linear act thing, were making it (kinda) open world
 
@@ -77,3 +82,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # i am gonna cry, literally just realised that half the reason my code doesnt work is bc im not saving the file before running it
