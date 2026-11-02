@@ -73,7 +73,7 @@ def main():
     typewriter("Just then, you spot creatures from the forest, getting dangerously close to the village...")
     protag_talk("(...Oh. I am a guardian now, after all. This'll be a great first test!)")
     win = forest_fight(char.lower())
-    if win():
+    if win:
         protag_talk("(Not half-bad for my first battle!)")
     else:
         protag_talk("(... I'll get more training.)")
