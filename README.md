@@ -19,4 +19,8 @@ Some of the wishlist features to be implemented (soon!) include:
 - And so much more!
 
 ## How to Play!
+
+For Windows, simply run the .exe file, and it should pop open in powershelL! Linux users should install the binary, run chmod +x on the binary, and then use ./(game) to run it!
+
+OLD --
 For now, this only works on Linux! To run, simply download either version of the release (for the best story experience, I'd recommend downloading the one not labelled "battle--" unless you're very excited to try the battle system, at which point, go ahead)!. Then simply run ./(file) in the terminal, and you can finally discover Littleheart for yourself! (Please note: art isn't exactly my thing... so all art -- if any -- will be added very close to the end of the project)
