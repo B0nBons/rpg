@@ -66,7 +66,7 @@ def main():
         protag_talk(f"{char}: Mirexio? Wasn't she that witch who got kicked out? Hehehe, I bet she could make me an infinite money potion! I'll get going, thanks granny!")
         typewriter("Granny Duffaye: (She was the one who was tormenting Geomoros?! He told me his tormenter had been eaten by wolves!)")
 
-    save_data['player_info']['name'] = char
+    save_data['player_info']['name'] = char.lower()
 
     time.sleep(1)
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
