@@ -72,7 +72,7 @@ def main():
     protag_talk(f"{char}: (I wonder what Mirexio could possibly want. She knows that after what she did, she isn't welcomed by most anyone... But if she says it's urgent, then I believe her. She wouldn't call something urgent if it wasn't.)")
     typewriter("Just then, you spot creatures from the forest, getting dangerously close to the village...")
     protag_talk("(...Oh. I am a guardian now, after all. This'll be a great first test!)")
-    win = forest_fight(char)
+    win = forest_fight(char.lower())
     if win():
         protag_talk("(Not half-bad for my first battle!)")
     else:
