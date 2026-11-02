@@ -10,13 +10,13 @@ from tabulate import tabulate
 import time
 
 MAIN_STORY_DEPENDENCIES = {
-    "act1" : None,
-    "act2" : "act1",
-    "act3" : "act2", 
-    "act4" : "act3",
-    "act5" : "act4",
-    "act6" : "act5",
-    "FINALE" : "act6"
+    "Mirexio, The Hated" : None,
+    "Elysia, The Explorer" : "Mirexio, The Hated",
+    "Twilia, The Lost" : "Elysia, The Explorer", 
+    "Nemaro, The Seeker" : "Twilia, The Lost",
+    "Klysari, The Queen" : "Nemaro, The Seeker",
+    "Rumento, The Traitor" : "Klysari, The Queen",
+    "Mirexio, The Storyteller" : "Rumento, The Traitor"
 }
 
 SIDE_QUEST_DEPENDENCIES = {
@@ -72,6 +72,7 @@ def quest_board(save=None, char=None):
     quests = load_available_quests(save, char)
     time.sleep(0.1)
     print(tabulate(quests, headers = ["Mission", "Focus"], tablefmt="fancy_grid"))
+    hold = input("[END SO FAR]")
 
 # the save file below is just for testing bc im lazy
 SAVE_TEST_FILE = {
